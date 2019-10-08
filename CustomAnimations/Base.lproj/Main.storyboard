@@ -214,29 +214,6 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1yZ-iu-UoJ">
-                                        <rect key="frame" x="0.0" y="76" width="277" height="50"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show milliseconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-h9-1nn">
-                                                <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
-                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZ5-93-vVk">
-                                                <rect key="frame" x="227" y="0.0" width="50" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="kZ5-93-vVk" secondAttribute="height" multiplier="1:1" id="DPI-Mi-hrR"/>
-                                                </constraints>
-                                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
-                                                <state key="normal" image="checkbox_empty"/>
-                                                <connections>
-                                                    <action selector="showMiliseconds:" destination="pOl-j9-ojg" eventType="touchUpInside" id="A5J-PI-gZE"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKV-3U-dWB">
                                         <rect key="frame" x="0.0" y="76" width="277" height="35"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
@@ -248,11 +225,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="1yZ-iu-UoJ"/>
-                                    </mask>
-                                </variation>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -269,7 +241,6 @@
                     <connections>
                         <outlet property="coundownTimerTF" destination="0gB-vG-dzg" id="8mL-6s-h17"/>
                         <outlet property="countdownProgressBar" destination="kYO-tB-1H8" id="wmh-Nf-RTs"/>
-                        <outlet property="milisecondBtn" destination="kZ5-93-vVk" id="C5c-gF-Vq1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9B2-VU-D3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,7 +265,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkbox_empty" width="50" height="50"/>
         <image name="plus" width="100" height="100"/>
     </resources>
 </document>

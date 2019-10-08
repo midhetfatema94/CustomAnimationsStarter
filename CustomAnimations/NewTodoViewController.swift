@@ -43,11 +43,9 @@ class NewTodoViewController: UIViewController {
         gradient.drawsAsynchronously = true
         
         self.view.layer.insertSublayer(gradient, at: 0)
-        
-        animateGradient()
     }
 
-    func animateGradient() {
+    /*func animateGradient() {
         // cycle through all the colors, feel free to add more to the set
         if currentGradient < gradientSet.count - 1 {
             currentGradient += 1
@@ -63,7 +61,7 @@ class NewTodoViewController: UIViewController {
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradientChangeAnimation.delegate = self
         gradient.add(gradientChangeAnimation, forKey: "gradientChangeAnimation")
-    }
+    }*/
 }
 
 extension NewTodoViewController: CAAnimationDelegate {
@@ -71,7 +69,6 @@ extension NewTodoViewController: CAAnimationDelegate {
         // if our gradient animation ended animating, restart the animation by changing the color set
         if flag {
             gradient.colors = gradientSet[currentGradient]
-            animateGradient()
         }
     }
 }

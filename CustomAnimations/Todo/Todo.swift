@@ -15,14 +15,7 @@ class Todo: UIView {
     @IBOutlet var checkers: [UIButton]!
     
     @IBAction func checkingBox(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.2, animations: {
-            sender.alpha = 0
-        }, completion: {_ in
-            UIView.animate(withDuration: 0.2, animations: {
-                sender.isSelected = !sender.isSelected
-                sender.alpha = 1
-            })
-        })
+        sender.isSelected = !sender.isSelected
     }
     
     public override init(frame: CGRect) {

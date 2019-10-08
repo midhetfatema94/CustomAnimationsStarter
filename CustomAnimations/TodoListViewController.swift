@@ -29,12 +29,9 @@ class TodoListViewController: UIViewController {
     @IBOutlet weak var addNewTodoBtn: UIButton!
     
     @IBAction func selectTodo(_ sender: UIButton) {
-        
         let contentOffsetPoint = sender.tag * Int(self.view.frame.width)
-        
-        UIView.animate(withDuration: 0.75) {
-            self.pagingScroll.setContentOffset(CGPoint(x: contentOffsetPoint, y: 0), animated: false)
-        }
+        self.pagingScroll.setContentOffset(CGPoint(x: contentOffsetPoint, y: 0), animated: false)
+        underlineLabel.center.x = sender.center.x
     }
     
     @IBAction func addNewTodo(_ sender: UIButton) {
@@ -46,17 +43,7 @@ class TodoListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.delegate = self
-        
-        welcomeLabel = UILabel(frame: CGRect(x: -300, y: 90, width: 150, height: 25))
-        welcomeLabel.text = "Welcome"
-        welcomeLabel.font = UIFont(name: "Avenir", size: 30)
-        self.view.addSubview(welcomeLabel)
-        
-        nameLabel = UILabel(frame: CGRect(x: -300, y: 130, width: 100, height: 25))
-        nameLabel.text = "Midhet"
-        nameLabel.font = UIFont(name: "Avenir", size: 30)
-        self.view.addSubview(nameLabel)
+        labelNamesAnimation(name: nil)
         
         pagingScroll.delegate = self
         pagingScroll.isPagingEnabled = true
@@ -105,31 +92,34 @@ class TodoListViewController: UIViewController {
     }
     
     @objc func animateEachLabel() {
-        UIView.animate(withDuration: 1.5, animations: {
-            self.welcomeLabel.frame.origin.x = 20
-        }) {_ in
-            UIView.animate(withDuration: 1.5) {
-                self.nameLabel.frame.origin.x = 20
-            }
-        }
+        self.welcomeLabel.frame.origin.x = 20
+        self.nameLabel.frame.origin.x = 20
+    }
+    
+    func labelNamesAnimation(name: String?) {
+        
+        let labelFont = UIFont(name: "Avenir", size: 30)
+        
+        welcomeLabel = UILabel(frame: CGRect(x: -300, y: 90, width: 150, height: 25))
+        welcomeLabel.text = "Welcome"
+        welcomeLabel.font = labelFont
+        self.view.addSubview(welcomeLabel)
+        
+        nameLabel = UILabel(frame: CGRect(x: -300, y: 130, width: 100, height: 25))
+        nameLabel.text = name ?? "Midhet"
+        nameLabel.font = labelFont
+        self.view.addSubview(nameLabel)
     }
 }
 
 extension TodoListViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        let arrayIndex = Int(pageIndex)
-        underlineLabel.center.x = getDraggablePoint(scrollView: scrollView)
-        underlineLabel.frame.size.width = todoCategory[arrayIndex].intrinsicContentSize.width
-    }
-    
-    func getDraggablePoint(scrollView: UIScrollView) -> CGFloat {
+    /*func getDraggablePoint(scrollView: UIScrollView) -> CGFloat {
         let progress = scrollView.contentOffset.x / (scrollView.contentSize.width - scrollView.bounds.size.width)
         let minPoint = todoCategory.first?.center.x ?? 0
         let maxPoint = todoCategory.last?.center.x ?? 0
         let pathValue = maxPoint - minPoint
         return (pathValue * progress) + minPoint
-    }
+    }*/
 }
 
 extension TodoListViewController: CircleTransitionable {
@@ -140,18 +130,4 @@ extension TodoListViewController: CircleTransitionable {
     var mainView: UIView {
         return self.view
     }
-}
-
-extension TodoListViewController: UINavigationControllerDelegate {
-
-    func navigationController(_ navigationController: UINavigationController,
-                              animationControllerFor operation: UINavigationController.Operation,
-                              from fromVC: UIViewController,
-                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if let _ = fromVC as? TodoListViewController, let _ = toVC as? NewTodoViewController {
-            return CircularTransition()
-        }
-        return nil
-    }
-
 }
