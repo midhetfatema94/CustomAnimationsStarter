@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Todo" customModule="CustomAnimations" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="iN0-l3-epB" id="1nm-UP-BqN"/>
+                <outletCollection property="taskStack" destination="yzK-uf-NIf" collectionClass="NSMutableArray" id="Lz4-hl-g7v"/>
+                <outletCollection property="taskStack" destination="mjq-jY-rim" collectionClass="NSMutableArray" id="arQ-f3-qas"/>
+                <outletCollection property="taskStack" destination="RVT-6L-GFz" collectionClass="NSMutableArray" id="6dn-sh-6iF"/>
+                <outletCollection property="checkers" destination="i7e-Vh-ciL" collectionClass="NSMutableArray" id="G0G-KB-Pqa"/>
+                <outletCollection property="checkers" destination="o3o-7X-LfM" collectionClass="NSMutableArray" id="z95-Nr-zSL"/>
+                <outletCollection property="checkers" destination="SUP-cp-tRM" collectionClass="NSMutableArray" id="VaB-kI-Mbw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="D4n-1M-Lkw">
+                    <rect key="frame" x="20" y="40" width="335" height="180"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nyT-IB-aa4">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7e-Vh-ciL">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="i7e-Vh-ciL" secondAttribute="height" multiplier="1:1" id="ep9-d4-mLA"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                    <state key="normal" image="checkbox_empty"/>
+                                    <connections>
+                                        <action selector="checkingBox:" destination="-1" eventType="touchUpInside" id="wl6-Rw-Rfu"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzK-uf-NIf">
+                                    <rect key="frame" x="70" y="0.0" width="265" height="50"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mwT-WW-hAg">
+                            <rect key="frame" x="0.0" y="65" width="335" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3o-7X-LfM">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="o3o-7X-LfM" secondAttribute="height" multiplier="1:1" id="lhT-s5-XQp"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                    <state key="normal" image="checkbox_empty"/>
+                                    <connections>
+                                        <action selector="checkingBox:" destination="-1" eventType="touchUpInside" id="u3y-T4-5HJ"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjq-jY-rim">
+                                    <rect key="frame" x="70" y="0.0" width="265" height="50"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="o3o-7X-LfM" firstAttribute="width" secondItem="o3o-7X-LfM" secondAttribute="height" multiplier="1:1" id="o9F-S1-S0i"/>
+                            </constraints>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FZA-RJ-ih6">
+                            <rect key="frame" x="0.0" y="130" width="335" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUP-cp-tRM">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="SUP-cp-tRM" secondAttribute="height" multiplier="1:1" id="5yw-x6-duL"/>
+                                    </constraints>
+                                    <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                    <state key="normal" image="checkbox_empty"/>
+                                    <connections>
+                                        <action selector="checkingBox:" destination="-1" eventType="touchUpInside" id="15p-gd-lKG"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RVT-6L-GFz">
+                                    <rect key="frame" x="70" y="0.0" width="265" height="50"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="D4n-1M-Lkw" secondAttribute="trailing" constant="20" id="9vg-4y-0fk"/>
+                <constraint firstItem="D4n-1M-Lkw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Ahb-F0-tZ8"/>
+                <constraint firstItem="D4n-1M-Lkw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="by2-ai-rZt"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138" y="121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkbox_empty" width="50" height="50"/>
+    </resources>
+</document>

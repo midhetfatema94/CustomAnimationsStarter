@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m0v-AM-2z0">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Todo List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TodoListViewController" customModule="CustomAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTL-qL-22E">
+                                <rect key="frame" x="0.0" y="194" width="375" height="373"/>
+                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ba6-i1-fRl">
+                                <rect key="frame" x="0.0" y="159" width="375" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CC-OG-Nnq">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Daily Todo">
+                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mUx-lm-uq6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1l-ys-557">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Groceries">
+                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o7e-SL-EZT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gkv-n0-gHV">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Deadlines">
+                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectTodo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mTG-3G-4hc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wda-6Z-yLr">
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="4in-Xa-iIa"/>
+                                    <constraint firstAttribute="width" constant="60" id="5tb-Ee-7tA"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="plus">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vGo-lQ-tAK" kind="show" id="PbH-q9-LUt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gTL-qL-22E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2kc-8W-bf4"/>
+                            <constraint firstItem="Wda-6Z-yLr" firstAttribute="top" secondItem="gTL-qL-22E" secondAttribute="bottom" constant="20" id="6pS-76-8vW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ba6-i1-fRl" secondAttribute="trailing" id="Byl-0H-vCR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gTL-qL-22E" secondAttribute="bottom" constant="100" id="cEE-6I-t0j"/>
+                            <constraint firstAttribute="trailing" secondItem="gTL-qL-22E" secondAttribute="trailing" id="k3c-43-dkj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wda-6Z-yLr" secondAttribute="trailing" constant="20" id="kC6-m1-TKG"/>
+                            <constraint firstItem="gTL-qL-22E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="l2B-bq-ywv"/>
+                            <constraint firstItem="gTL-qL-22E" firstAttribute="top" secondItem="ba6-i1-fRl" secondAttribute="bottom" id="ov0-9O-Kof"/>
+                            <constraint firstItem="ba6-i1-fRl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pnC-d9-Pkb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tLo-ob-BJe"/>
+                    <connections>
+                        <outlet property="addNewTodoBtn" destination="Wda-6Z-yLr" id="hhn-jE-8lI"/>
+                        <outlet property="categoryStack" destination="ba6-i1-fRl" id="aG6-gX-QDF"/>
+                        <outlet property="pagingScroll" destination="gTL-qL-22E" id="gxS-eZ-MHL"/>
+                        <outletCollection property="todoCategory" destination="1CC-OG-Nnq" collectionClass="NSMutableArray" id="okr-oX-QW9"/>
+                        <outletCollection property="todoCategory" destination="Q1l-ys-557" collectionClass="NSMutableArray" id="DBg-qL-DQB"/>
+                        <outletCollection property="todoCategory" destination="gkv-n0-gHV" collectionClass="NSMutableArray" id="Upa-Va-IPb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="233"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rKO-tD-YLJ">
+            <objects>
+                <viewController id="wOs-xD-4DB" customClass="ViewController" customModule="CustomAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTt-H4-VUb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="ieO-ot-Iu7">
+                                <rect key="frame" x="54" y="283.5" width="267" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOb-Hu-btb">
+                                        <rect key="frame" x="0.0" y="0.0" width="267" height="35"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Go to Todo List Application">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="rFz-Yo-7Tj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDT-04-51o">
+                                        <rect key="frame" x="0.0" y="65" width="267" height="35"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="    Go to Stopwatch Application    ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pOl-j9-ojg" kind="show" id="SnZ-cy-VDB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ieO-ot-Iu7" firstAttribute="centerX" secondItem="eTt-H4-VUb" secondAttribute="centerX" id="FVt-yh-j2K"/>
+                            <constraint firstItem="ieO-ot-Iu7" firstAttribute="centerY" secondItem="eTt-H4-VUb" secondAttribute="centerY" id="Six-9S-yqc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NOX-fc-EGs"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Vd-9V-LtY"/>
+                    <connections>
+                        <outletCollection property="appButtons" destination="xOb-Hu-btb" collectionClass="NSMutableArray" id="AKV-UV-gl5"/>
+                        <outletCollection property="appButtons" destination="vDT-04-51o" collectionClass="NSMutableArray" id="hla-63-GUQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C1F-vj-bs3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="233"/>
+        </scene>
+        <!--New Todo View Controller-->
+        <scene sceneID="zkp-aa-uR3">
+            <objects>
+                <viewController id="vGo-lQ-tAK" customClass="NewTodoViewController" customModule="CustomAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cW8-SB-jWi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can add a new todo here!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCM-2n-Skt">
+                                <rect key="frame" x="20" y="279" width="335" height="109"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hCM-2n-Skt" secondAttribute="trailing" constant="20" id="0KF-0u-IOR"/>
+                            <constraint firstItem="hCM-2n-Skt" firstAttribute="centerX" secondItem="cW8-SB-jWi" secondAttribute="centerX" id="Dub-BZ-iKt"/>
+                            <constraint firstItem="hCM-2n-Skt" firstAttribute="centerY" secondItem="cW8-SB-jWi" secondAttribute="centerY" id="F6W-37-CLK"/>
+                            <constraint firstItem="hCM-2n-Skt" firstAttribute="leading" secondItem="cW8-SB-jWi" secondAttribute="leading" constant="20" id="VgN-rO-dFh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f45-tE-jYv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="63P-Zw-UOh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3f-eF-swl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="233"/>
+        </scene>
+        <!--Gradient View Controller-->
+        <scene sceneID="crB-gv-LML">
+            <objects>
+                <viewController id="pOl-j9-ojg" customClass="GradientViewController" customModule="CustomAnimations" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CkZ-Vq-c7i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYO-tB-1H8">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Dod-yy-Fgs"/>
+                                    <constraint firstAttribute="width" secondItem="kYO-tB-1H8" secondAttribute="height" multiplier="1:1" id="NLV-YG-Ntg"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="A18-8K-hHe">
+                                <rect key="frame" x="49" y="82.5" width="277" height="111"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fGM-is-ZFS">
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stopwatch Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iG9-5g-3Aj">
+                                                <rect key="frame" x="0.0" y="0.0" width="205.5" height="36"/>
+                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="10" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gB-vG-dzg">
+                                                <rect key="frame" x="225.5" y="0.0" width="51.5" height="36"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1yZ-iu-UoJ">
+                                        <rect key="frame" x="0.0" y="76" width="277" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show milliseconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0t-h9-1nn">
+                                                <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
+                                                <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZ5-93-vVk">
+                                                <rect key="frame" x="227" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="kZ5-93-vVk" secondAttribute="height" multiplier="1:1" id="DPI-Mi-hrR"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                                <state key="normal" image="checkbox_empty"/>
+                                                <connections>
+                                                    <action selector="showMiliseconds:" destination="pOl-j9-ojg" eventType="touchUpInside" id="A5J-PI-gZE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKV-3U-dWB">
+                                        <rect key="frame" x="0.0" y="76" width="277" height="35"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <state key="normal" title="Show Countdown!">
+                                            <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="showTimer:" destination="pOl-j9-ojg" eventType="touchUpInside" id="cID-a2-bDz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="1yZ-iu-UoJ"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kYO-tB-1H8" firstAttribute="top" secondItem="A18-8K-hHe" secondAttribute="bottom" constant="40" id="ATp-wo-dXQ"/>
+                            <constraint firstItem="kYO-tB-1H8" firstAttribute="centerX" secondItem="CkZ-Vq-c7i" secondAttribute="centerX" id="ODY-T2-z4V"/>
+                            <constraint firstItem="kYO-tB-1H8" firstAttribute="centerX" secondItem="CkZ-Vq-c7i" secondAttribute="centerX" id="UoH-kH-JiK"/>
+                            <constraint firstItem="A18-8K-hHe" firstAttribute="centerX" secondItem="CkZ-Vq-c7i" secondAttribute="centerX" id="t31-IR-BHa"/>
+                            <constraint firstItem="kYO-tB-1H8" firstAttribute="centerY" secondItem="CkZ-Vq-c7i" secondAttribute="centerY" id="v3g-Sq-yN5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hbh-Hp-xw9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zgc-ar-DKj"/>
+                    <connections>
+                        <outlet property="coundownTimerTF" destination="0gB-vG-dzg" id="8mL-6s-h17"/>
+                        <outlet property="countdownProgressBar" destination="kYO-tB-1H8" id="wmh-Nf-RTs"/>
+                        <outlet property="milisecondBtn" destination="kZ5-93-vVk" id="C5c-gF-Vq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9B2-VU-D3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="1047"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vf1-Mq-p2y">
+            <objects>
+                <navigationController id="m0v-AM-2z0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iEU-iP-18S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wOs-xD-4DB" kind="relationship" relationship="rootViewController" id="Iiv-h1-BKU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ril-sD-AnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-759" y="233"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkbox_empty" width="50" height="50"/>
+        <image name="plus" width="100" height="100"/>
+    </resources>
+</document>
