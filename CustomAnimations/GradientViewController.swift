@@ -24,17 +24,6 @@ class GradientViewController: UIViewController {
         
         coundownTimerTF.delegate = self
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        countdownView = CountdownProgressBar(frame: countdownProgressBar.bounds)
-        countdownProgressBar.addSubview(countdownView)
-        countdownView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-    }
-    
-    @objc func handleTap() {
-        countdownView.startCoundown(duration: 20, showPulse: true, showMS: true)
-    }
 }
 
 extension GradientViewController: UITextFieldDelegate {
